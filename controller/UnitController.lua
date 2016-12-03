@@ -30,6 +30,23 @@ function UnitController()
 		update(dt, data)
 	end
 
+	function spawnLocation(){
+		local rndm = love.math.random(1,4)
+		local windowWidth = love.graphics.getWidth()
+		local windowHeight = love.graphics.getHeight()
+		
+		if rndm == 1 then -- Norden
+
+		elseif rndm == 2 then -- Osten
+
+		elseif rndm == 3 then -- Sueden
+
+		else if rndm == 4 -- Westen
+
+		end
+
+	}
+
 	return self
 end
 

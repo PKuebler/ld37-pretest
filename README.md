@@ -4,11 +4,11 @@ LudumDare 37 Pretest
 # Aufbau
 
 - Controller
-	- UnitController *Spawnt und Steuert die Einheiten, bekommt die Daten übergeben*
+	- UnitController.lua *Spawnt und Steuert die Einheiten, bekommt die Daten übergeben*
 - Renderer
-	- Renderer *Rendert das Spiel, bekommt die Daten übergeben*
+	- Renderer.lua *Rendert das Spiel, bekommt die Daten übergeben*
 - Stages
-	- GameStage *eigentliches Spiel*
-	- MenuStage *Menu*
-	- StageManager *Handelt, welche Stage gestartet wird und wie*
+	- GameStage.lua *eigentliches Spiel*
+	- MenuStage.lua *Menu*
+	- StageManager.lua *Handelt, welche Stage gestartet wird und wie*
 - main.lua *Startet Stagemanager*

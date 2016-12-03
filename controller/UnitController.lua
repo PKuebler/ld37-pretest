@@ -10,6 +10,8 @@ function UnitController()
 			self.lastSpawn = 0
 			local w,h = 0,0
 			w,h = spawnLocation() 
+
+			print(w,h)
 			data.units[#data.units+1] = {
 				--x = (#data.units+1)*10,
 				--y = (#data.units+1)*10
@@ -35,7 +37,7 @@ function UnitController()
   
 	function spawnLocation()
 
-		local space = 10 -- Abstand zur Seite
+		local space = 20 -- Abstand zur Seite
 		local rndm = love.math.random(1,4)
 		print(rndm)
 		local windowWidth = love.graphics.getWidth()

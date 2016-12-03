@@ -8,10 +8,13 @@ function UnitController()
 
 		if self.lastSpawn > 2 then
 			self.lastSpawn = 0
-
+			local w,h = 0,0
+			w,h = spawnLocation() 
 			data.units[#data.units+1] = {
-				x = (#data.units+1)*10,
-				y = (#data.units+1)*10
+				--x = (#data.units+1)*10,
+				--y = (#data.units+1)*10
+				x = w,
+				y = h 
 			}
 		end
 	end
@@ -29,23 +32,32 @@ function UnitController()
 		----------------------
 		update(dt, data)
 	end
+  
+	function spawnLocation()
 
-	function spawnLocation(){
+		local space = 10 -- Abstand zur Seite
 		local rndm = love.math.random(1,4)
+		print(rndm)
 		local windowWidth = love.graphics.getWidth()
 		local windowHeight = love.graphics.getHeight()
-		
-		if rndm == 1 then -- Norden
+		local x = love.math.random(space,windowWidth-space)
+		local y = love.math.random(space,windowHeight-space)
 
+		if rndm == 1 then -- Norden
+			y = space
 		elseif rndm == 2 then -- Osten
+			x = windowWidth 
 
 		elseif rndm == 3 then -- Sueden
+			y = windowHeight 
 
-		else if rndm == 4 -- Westen
+		elseif rndm == 4 then -- Westen
+			x = space
 
 		end
 
-	}
+		return x,y 
+	end
 
 	return self
 end

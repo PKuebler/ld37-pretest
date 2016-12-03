@@ -10,8 +10,7 @@ function UnitController()
 			self.lastSpawn = 0
 			local w,h = 0,0
 			w,h = spawnLocation() 
-
-			print(w,h)
+			--print(w,h)
 			data.units[#data.units+1] = {
 				--x = (#data.units+1)*10,
 				--y = (#data.units+1)*10
@@ -39,7 +38,7 @@ function UnitController()
 
 		local space = 20 -- Abstand zur Seite
 		local rndm = love.math.random(1,4)
-		print(rndm)
+		--print(rndm)
 		local windowWidth = love.graphics.getWidth()
 		local windowHeight = love.graphics.getHeight()
 		local x = love.math.random(space,windowWidth-space)
@@ -48,10 +47,10 @@ function UnitController()
 		if rndm == 1 then -- Norden
 			y = space
 		elseif rndm == 2 then -- Osten
-			x = windowWidth 
+			x = windowWidth - space
 
 		elseif rndm == 3 then -- Sueden
-			y = windowHeight 
+			y = windowHeight -space
 
 		elseif rndm == 4 then -- Westen
 			x = space
